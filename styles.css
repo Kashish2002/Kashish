@@ -302,7 +302,7 @@ body {
   background: var(--white);
   padding: 16px;
   border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+  box-shadow: 0 8px 24px #1a53d76e;
   min-width: 220px;
   opacity: 0;
   visibility: hidden;
@@ -320,7 +320,7 @@ body {
   border-radius: 8px;
 }
 .dropdown a:hover {
-  background: rgba(11, 92, 255, 0.06);
+  background: #1a53d76e;
 }
 
 /* Services sub-menu vertical layout */
@@ -579,7 +579,7 @@ body {
   font-weight: 600;
 }
 .footer-about .foot-desc {
-  color: var(--muted);
+  color: white;
   margin-top: 10px;
   margin-bottom: 14px;
   max-width: 320px;
@@ -590,7 +590,7 @@ body {
   margin-top: 6px;
 }
 .social-link {
-  color: var(--muted);
+  color: #fff;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -663,7 +663,7 @@ body {
   text-decoration: none;
 }
 .footer-legal a:hover {
-  color: var(--primary);
+  color: white;
 }
 
 /* Footer visual polish */
@@ -856,10 +856,10 @@ body {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 .footer-bottom p {
-  color: #94a3b8;
+  color: white;
 }
 .footer-legal a {
-  color: #94a3b8;
+  color: white;
 }
 .footer-legal a:hover {
   color: var(--link-hover-text);
@@ -988,5 +988,45 @@ body {
   .main-nav {
     width: 90%;
     right: 5%;
+  }
+}
+
+/* Make the Services submenu display items in a single horizontal line on desktop
+   and fall back to a stacked column on smaller screens. Targets the
+   #services-dropdown element present in `index.html`. */
+#services-dropdown ul {
+  display: flex;
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+}
+#services-dropdown li {
+  margin: 0;
+}
+#services-dropdown {
+  /* allow the dropdown to size to content rather than forcing min-width */
+  min-width: auto;
+  padding: 8px 12px;
+}
+#services-dropdown a {
+  color: #ffffff;
+  padding: 8px 10px;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+@media (max-width: 992px) {
+  /* On tablet/mobile keep the submenu stacked and readable */
+  #services-dropdown ul {
+    flex-direction: column;
+    gap: 8px;
+  }
+  #services-dropdown {
+    background: #ffffff;
+  }
+  #services-dropdown a {
+    color: inherit;
   }
 }
