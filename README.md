@@ -1,5 +1,4 @@
-# Landing Page — Services & Contact
-
+# Company
 This is a simple HTML/CSS/JS implementation that recreates a landing page layout with:
 
 - A header with a "Services" menu that shows a dropdown on hover and hides when the mouse leaves.
